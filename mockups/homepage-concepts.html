@@ -1,0 +1,455 @@
+<title>Tibi Lab Homepage Concepts</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Caveat:wght@400..700&family=DM+Mono:wght@400;500&family=Gochi+Hand&family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400..700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400..700&family=Space+Mono:wght@400;700&family=Young+Serif&display=swap">
+<style>
+/* Shell: a quiet review bench. Tabs on top, the chosen mockup in a frame below; the frame is a size container so "Phone" shows the real mobile layout. */
+:root{
+  --bg:#F3F3F6; --fg:#1B1C22; --muted:#5D5F6E; --line:#D8D9E1; --surface:#FFFFFF; --accent:#4347C9;
+  --f-ui:'Inter',system-ui,-apple-system,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#131418;--fg:#ECECF1;--muted:#9A9CAB;--line:#2C2E37;--surface:#1D1E25;--accent:#A9ABFF;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#131418;--fg:#ECECF1;--muted:#9A9CAB;--line:#2C2E37;--surface:#1D1E25;--accent:#A9ABFF;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);font-size:15px;line-height:1.5;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:24px 48px}
+.shell{max-width:1240px;margin-inline:auto;display:grid;gap:18px}
+.shell-head{display:grid;gap:6px}
+.shell-head h1{margin:0;font-size:22px;letter-spacing:-.01em;text-wrap:balance}
+.shell-head p{margin:0;color:var(--muted);max-width:68ch}
+.tabs{display:flex;flex-wrap:wrap;gap:8px}
+.tab{font:inherit;font-size:14px;font-weight:600;color:var(--fg);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 14px;cursor:pointer;display:flex;gap:8px;align-items:center}
+.tab span{font-variant-numeric:tabular-nums;color:var(--muted);font-weight:500}
+.tab[aria-selected="true"]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.tab[aria-selected="true"] span{color:inherit;opacity:.7}
+.tab:focus-visible,.viewbtn:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.brief{display:flex;flex-wrap:wrap;gap:12px 24px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:14px}
+.brief div{min-width:0;flex:1 1 380px}
+.brief strong{font-size:17px}
+.brief p{margin:2px 0 0;color:var(--muted);max-width:80ch}
+.view{display:flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.viewbtn{font:inherit;font-size:13px;font-weight:600;border:0;background:transparent;color:var(--muted);padding:8px 14px;cursor:pointer}
+.viewbtn[aria-pressed="true"]{background:var(--fg);color:var(--bg)}
+.frame{container-type:inline-size;container-name:mock;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface);margin-inline:auto;width:100%;max-width:100%}
+.frame.phone{max-width:390px;border:10px solid var(--fg);border-radius:40px;height:780px;overflow-y:auto;scrollbar-width:thin}
+.mock a{cursor:pointer}
+.mock *{box-sizing:border-box}
+.ic{display:block}
+
+/* ============ 1. TWO DOORS ============ */
+.m1{--honey:#F4B740;--honey-2:#E9A321;--night:#14213D;--night-2:#1E3159;--glow:#FFD27A;--ink:#2A1C06;--cream:#FFF4DA;
+  font-family:'Bricolage Grotesque',system-ui,sans-serif;color:var(--ink);background:var(--honey)}
+.m1-nav{display:flex;justify-content:space-between;align-items:center;padding:22px 5cqi;background:linear-gradient(90deg,var(--honey) 50%,var(--night) 50%)}
+.m1-logo{display:flex;gap:10px;align-items:center;font-weight:800;font-size:20px;color:var(--ink);text-decoration:none;letter-spacing:-.02em}
+.m1-logo .ic{width:30px;height:30px}
+.m1-links{display:flex;gap:26px}
+.m1-links a{color:var(--cream);text-decoration:none;font-weight:600;font-size:15px}
+.m1-links a:hover{color:var(--glow)}
+.m1-split{display:grid;grid-template-columns:1fr 1fr}
+.m1-half{padding:2cqi 5cqi 6cqi;display:grid;gap:18px;align-content:start}
+.m1-hive{background:var(--honey);justify-items:end;text-align:right}
+.m1-door{background:var(--night);color:var(--cream);justify-items:start}
+.m1-h1{margin:0 0 2cqi;font-size:clamp(48px,10cqi,132px);font-weight:800;line-height:.9;letter-spacing:-.045em}
+.m1-door .m1-h1{color:var(--glow)}
+.m1-art{width:min(260px,30cqi);height:auto}
+.m1-half h2{margin:0;font-size:clamp(26px,3.2cqi,40px);font-weight:800;letter-spacing:-.02em}
+.m1-half p{margin:0;max-width:34ch;font-size:17px;line-height:1.45}
+.m1-btn{display:inline-flex;gap:10px;align-items:center;padding:13px 22px;border-radius:999px;font-weight:700;text-decoration:none;font-size:16px;transition:transform .2s}
+.m1-btn:hover{transform:translateY(-2px)}
+.m1-hive .m1-btn{background:var(--ink);color:var(--honey)}
+.m1-door .m1-btn{background:var(--glow);color:var(--night)}
+.m1-glow{animation:m1pulse 3.6s ease-in-out infinite;transform-origin:50% 100%}
+@keyframes m1pulse{0%,100%{opacity:.75}50%{opacity:1}}
+.m1-foot{display:flex;justify-content:space-between;gap:16px;padding:18px 5cqi;font-size:14px;background:linear-gradient(90deg,var(--honey-2) 50%,var(--night-2) 50%)}
+.m1-foot span{color:var(--ink);font-weight:600}
+.m1-foot a{color:var(--cream);font-weight:600;text-decoration:none}
+@container mock (max-width:700px){
+  .m1-nav,.m1-foot{background:var(--honey);padding-inline:20px}
+  .m1-links{gap:16px}.m1-links a,.m1-foot a{color:var(--ink)}
+  .m1-split{grid-template-columns:1fr}
+  .m1-half{padding:28px 20px 40px;justify-items:start;text-align:left}
+  .m1-art{width:160px}
+  .m1-h1{font-size:64px;margin:0}
+  .m1-foot{background:var(--night);flex-direction:column}.m1-foot span,.m1-foot a{color:var(--cream)}
+}
+
+/* ============ 2. NORDIC INDEX ============ */
+.m2{--fog:#E7ECE8;--paper:#F4F6F3;--ink:#1C2A29;--soft:#5A6866;--rule:#C3CDC8;--pine:#2D5C4D;
+  --f-disp:'Instrument Serif',Georgia,serif;--f-body:'Instrument Sans',system-ui,sans-serif;
+  background:var(--fog);color:var(--ink);font-family:var(--f-body)}
+.m2-in{max-width:1100px;margin-inline:auto;padding:0 6cqi}
+.m2-nav{display:flex;justify-content:space-between;align-items:baseline;padding-block:30px}
+.m2-logo{font-family:var(--f-disp);font-size:26px;color:var(--ink);text-decoration:none}
+.m2-logo i{color:var(--pine)}
+.m2-links{display:flex;gap:28px;font-size:14px}
+.m2-links a{color:var(--soft);text-decoration:none}
+.m2-links a:hover{color:var(--ink)}
+.m2-hero{display:grid;grid-template-columns:1.4fr 1fr;gap:6cqi;align-items:end;padding-block:9cqi 8cqi}
+.m2-hero h1{margin:0;font-family:var(--f-disp);font-weight:400;font-size:clamp(44px,7.2cqi,96px);line-height:.98;letter-spacing:-.02em;text-wrap:balance}
+.m2-hero h1 i{color:var(--pine)}
+.m2-hero p{margin:0;color:var(--soft);font-size:17px;max-width:36ch}
+.m2-label{display:flex;justify-content:space-between;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);padding-bottom:12px;border-bottom:1px solid var(--ink)}
+.m2-row{display:grid;grid-template-columns:72px 1.2fr 1fr auto;gap:3cqi;align-items:center;padding-block:30px;border-bottom:1px solid var(--rule);color:inherit;text-decoration:none;transition:background .25s,padding .25s}
+.m2-row:hover{background:var(--paper);padding-inline:16px}
+.m2-row .ic{width:64px;height:64px}
+.m2-row h2{margin:0;font-family:var(--f-disp);font-weight:400;font-size:clamp(38px,5cqi,60px);line-height:1}
+.m2-row p{margin:0;color:var(--soft);font-size:16px;max-width:34ch}
+.m2-detail{display:block;margin-top:10px;font-size:13px;color:var(--pine);font-weight:600}
+.m2-arrow{font-size:28px;color:var(--pine);transition:transform .25s}
+.m2-row:hover .m2-arrow{transform:translateX(6px)}
+.m2-studio{display:grid;grid-template-columns:1fr 2fr;gap:6cqi;padding-block:9cqi}
+.m2-studio h3{margin:0;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);font-weight:600}
+.m2-studio p{margin:0;font-family:var(--f-disp);font-size:clamp(24px,2.8cqi,32px);line-height:1.25;max-width:30ch}
+.m2-foot{display:flex;justify-content:space-between;gap:16px;padding-block:26px;border-top:1px solid var(--rule);font-size:13px;color:var(--soft)}
+.m2-foot a{color:var(--ink)}
+@container mock (max-width:700px){
+  .m2-in{padding:0 20px}.m2-links{gap:16px}
+  .m2-hero,.m2-studio{grid-template-columns:1fr;gap:18px;padding-block:44px}
+  .m2-row{grid-template-columns:52px 1fr auto;gap:14px}.m2-row .ic{width:48px;height:48px}
+  .m2-row p{grid-column:2/4}
+  .m2-row:hover{padding-inline:0}
+}
+
+/* ============ 3. KITCHEN TABLE ============ */
+.m3{--lino:#9EC2AB;--lino-dot:#7FA48D;--lino-dot2:#C4DCCB;--tape:#18181B;--tape-fg:#F1F1F1;--paper:#FFFFFF;--ink:#26262A;--book:#1E4B47;--book-2:#173A37;--glow:#FFC861;--note:#FFE873;
+  font-family:'Space Mono',ui-monospace,monospace;color:var(--ink);
+  background-color:var(--lino);
+  background-image:radial-gradient(var(--lino-dot) 1.2px,transparent 1.6px),radial-gradient(var(--lino-dot2) 1px,transparent 1.4px);
+  background-size:22px 22px,31px 31px;background-position:0 0,11px 7px}
+.m3-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:28px 5cqi;flex-wrap:wrap}
+.m3-tape{display:inline-block;background:var(--tape);color:var(--tape-fg);font-family:'Archivo Black',sans-serif;letter-spacing:.22em;font-size:18px;padding:8px 14px 7px;text-shadow:0 1px 0 rgba(255,255,255,.35),0 -1px 0 rgba(0,0,0,.6);box-shadow:0 3px 6px rgba(0,0,0,.25);transform:rotate(-2deg);text-decoration:none;border-radius:2px}
+.m3-links{display:flex;gap:12px}
+.m3-links a{font-size:13px;font-weight:700;color:var(--ink);background:var(--paper);padding:6px 10px;text-decoration:none;box-shadow:0 2px 4px rgba(0,0,0,.15)}
+.m3-links a:nth-child(2){transform:rotate(1.5deg)}.m3-links a:nth-child(3){transform:rotate(-1deg)}
+.m3-table{display:grid;grid-template-columns:1fr 1fr 0.8fr;gap:5cqi;align-items:start;padding:3cqi 6cqi 7cqi}
+.m3-obj{display:block;color:inherit;text-decoration:none;transition:transform .3s,box-shadow .3s}
+.m3-receipt{background:var(--paper);padding:26px 22px 34px;font-size:13px;line-height:1.55;transform:rotate(-3deg);box-shadow:0 14px 24px rgba(20,40,30,.28);
+  -webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%}
+.m3-receipt:hover{transform:rotate(0) translateY(-6px)}
+.m3-receipt .ic{width:44px;height:44px;margin:0 auto 6px}
+.m3-receipt h2{margin:0;text-align:center;font-size:20px;letter-spacing:.08em}
+.m3-c{text-align:center;margin:0}
+.m3-hr{border:0;border-top:2px dashed var(--ink);margin:12px 0}
+.m3-line{display:flex;justify-content:space-between;gap:10px;font-variant-numeric:tabular-nums}
+.m3-sub{padding-left:14px;color:#55555c;margin-bottom:6px}
+.m3-cta{display:block;margin-top:14px;text-align:center;border:2px solid var(--ink);padding:8px;font-weight:700}
+.m3-book{aspect-ratio:3/4.3;max-width:100%;background:linear-gradient(90deg,var(--book-2) 0 14px,var(--book) 14px);color:#F7E9C8;padding:28px 26px 26px 40px;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(2.5deg);box-shadow:0 18px 28px rgba(15,35,30,.35),inset -3px 0 0 rgba(255,255,255,.08);border-radius:3px 8px 8px 3px;font-family:'Young Serif',Georgia,serif}
+.m3-book:hover{transform:rotate(0) translateY(-6px)}
+.m3-book small{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.75}
+.m3-book h2{margin:6px 0 0;font-size:clamp(30px,3.6cqi,42px);font-weight:400;line-height:1}
+.m3-book svg{width:62%;height:auto;align-self:center}
+.m3-book p{margin:0;font-size:15px;line-height:1.35}
+.m3-chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;font-family:'Space Mono',monospace;font-size:11px}
+.m3-chips span{border:1px solid rgba(247,233,200,.5);padding:2px 7px;border-radius:99px}
+.m3-note{background:var(--note);padding:22px 20px 26px;font-family:'Gochi Hand',cursive;font-size:22px;line-height:1.25;transform:rotate(-4deg);box-shadow:0 10px 16px rgba(20,40,30,.22);margin-top:3cqi}
+.m3-note p{margin:0 0 10px}
+.m3-note a{color:var(--ink)}
+.m3-foot{display:flex;justify-content:space-between;gap:16px;padding:20px 5cqi;background:rgba(255,255,255,.35);font-size:12px}
+.m3-foot a{color:var(--ink);font-weight:700}
+@container mock (max-width:760px){
+  .m3-nav{padding-inline:20px}
+  .m3-table{grid-template-columns:1fr;padding:12px 28px 48px;gap:40px}
+  .m3-receipt{transform:rotate(-1.5deg)}.m3-book{transform:rotate(1.5deg)}.m3-note{order:-1;transform:rotate(-2deg);margin:0}
+  .m3-foot{padding-inline:20px;flex-direction:column}
+}
+
+/* ============ 4. LOUD TYPE ============ */
+.m4{--cobalt:#2236D1;--blush:#FFD6DF;--butter:#FFE45C;--deep:#0F1A6E;
+  background:var(--cobalt);color:var(--blush);font-family:'DM Mono',ui-monospace,monospace;overflow:hidden}
+.m4-nav{display:flex;justify-content:space-between;gap:16px;padding:22px 4cqi;font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+.m4-nav a{color:var(--blush);text-decoration:none}
+.m4-nav a:hover{color:var(--butter)}
+.m4-links{display:flex;gap:22px}
+.m4-intro{padding:4cqi 4cqi 2cqi;font-size:clamp(15px,1.6cqi,19px);max-width:56ch;margin:0}
+.m4-app{display:block;text-decoration:none;color:var(--blush);padding:0 4cqi 3cqi;border-top:3px solid var(--blush);position:relative}
+.m4-name{display:block;font-family:'Anton',Impact,sans-serif;font-size:21.5cqi;line-height:.86;letter-spacing:-.005em;text-transform:uppercase;padding-top:1.6cqi;transition:color .2s}
+.m4-app.taler .m4-name{font-size:18.7cqi}
+.m4-meta{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:clamp(13px,1.5cqi,17px);margin-top:1.2cqi}
+.m4-meta b{font-weight:500;color:var(--butter);white-space:nowrap}
+.m4-app:hover .m4-name,.m4-app:focus-visible .m4-name{color:var(--butter)}
+.m4-app .ic{position:absolute;right:4cqi;top:3cqi;width:9cqi;height:9cqi;opacity:0;transform:scale(.6) rotate(-12deg);transition:.3s}
+.m4-app:hover .ic{opacity:1;transform:none}
+.m4-strip{background:var(--butter);color:var(--deep);white-space:nowrap;overflow:hidden;font-family:'Anton',sans-serif;font-size:22px;letter-spacing:.04em;padding:8px 0}
+.m4-strip div{display:inline-block;animation:m4run 22s linear infinite}
+@keyframes m4run{to{transform:translateX(-50%)}}
+.m4-foot{display:flex;justify-content:space-between;gap:16px;padding:22px 4cqi;border-top:3px solid var(--blush);font-size:13px;text-transform:uppercase;letter-spacing:.08em}
+.m4-foot a{color:var(--butter)}
+@container mock (max-width:700px){.m4-nav,.m4-intro,.m4-app,.m4-foot{padding-inline:18px}.m4-links{gap:14px}.m4-meta{flex-direction:column;align-items:flex-start;gap:4px}.m4-intro{padding-top:28px;padding-bottom:20px}}
+
+/* ============ 5. LAB NOTEBOOK ============ */
+.m5{--paper:#F8FAFC;--grid:#D5E2EE;--grid-2:#B9CDE0;--ink:#1F3A8F;--pencil:#3E4350;--hl:#FFEE58;--margin:#E0645A;--tape:rgba(236,222,172,.82);
+  font-family:'IBM Plex Mono',ui-monospace,monospace;color:var(--pencil);
+  background-color:var(--paper);
+  background-image:linear-gradient(var(--grid-2) 1px,transparent 1px),linear-gradient(90deg,var(--grid-2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px;position:relative}
+.m5::before{content:"";position:absolute;top:0;bottom:0;left:64px;width:2px;background:var(--margin);opacity:.6}
+.m5-in{padding:0 5cqi 0 100px;position:relative}
+.m5-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:24px;font-size:13px}
+.m5-logo{font-weight:500;color:var(--pencil);text-decoration:none;letter-spacing:.04em}
+.m5-logo b{font-family:'Caveat',cursive;font-size:28px;color:var(--ink);font-weight:700;letter-spacing:0}
+.m5-links{display:flex;gap:22px}
+.m5-links a{color:var(--pencil)}
+.m5-hero{padding-block:4cqi 3cqi;max-width:820px}
+.m5-date{font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.m5-hero h1{margin:6px 0 0;font-family:'Caveat',cursive;font-weight:700;color:var(--ink);font-size:clamp(52px,8cqi,104px);line-height:.92;text-wrap:balance}
+.m5-hl{background:linear-gradient(transparent 52%,var(--hl) 52% 88%,transparent 88%);padding:0 .08em}
+.m5-hero p{margin:14px 0 0;font-size:15px;max-width:52ch;line-height:1.6}
+.m5-specs{display:grid;grid-template-columns:1fr 1fr;gap:6cqi;padding-block:4cqi 6cqi}
+.m5-spec{position:relative;display:grid;gap:12px;color:inherit;text-decoration:none}
+.m5-card{background:#fff;padding:22px;box-shadow:0 6px 14px rgba(30,50,90,.14);position:relative;display:grid;grid-template-columns:96px 1fr;gap:18px;align-items:center;transition:transform .25s}
+.m5-spec:hover .m5-card{transform:rotate(-1deg) translateY(-3px)}
+.m5-spec:nth-child(2) .m5-card{transform:rotate(1.2deg)}
+.m5-spec:nth-child(2):hover .m5-card{transform:rotate(0) translateY(-3px)}
+.m5-card::before,.m5-card::after{content:"";position:absolute;width:74px;height:22px;background:var(--tape);top:-10px}
+.m5-card::before{left:-14px;transform:rotate(-28deg)}.m5-card::after{right:-14px;transform:rotate(26deg)}
+.m5-card .ic{width:96px;height:96px}
+.m5-card small{font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.m5-card h2{margin:2px 0 4px;font-family:'Caveat',cursive;font-size:40px;color:var(--ink);line-height:1}
+.m5-card p{margin:0;font-size:13px;line-height:1.5}
+.m5-notes{font-family:'Caveat',cursive;color:var(--ink);font-size:24px;line-height:1.15;display:grid;grid-template-columns:auto 1fr;gap:4px 10px;align-items:center;padding-left:10px}
+.m5-notes svg{width:40px;height:24px}
+.m5-go{font-family:'IBM Plex Mono',monospace;font-size:13px;color:var(--ink);text-decoration:underline;text-underline-offset:4px;padding-left:10px}
+.m5-ring{position:absolute;right:6cqi;top:120px;width:150px;height:150px;border-radius:50%;box-shadow:inset 0 0 0 7px rgba(140,95,50,.12),inset 0 0 0 9px rgba(140,95,50,.05);pointer-events:none}
+.m5-foot{display:flex;justify-content:space-between;gap:16px;padding-block:20px;border-top:2px dashed var(--grid-2);font-size:12px}
+.m5-foot a{color:var(--ink)}
+@container mock (max-width:760px){
+  .m5::before{left:22px}.m5-in{padding:0 18px 0 40px}.m5-links{gap:12px}
+  .m5-specs{grid-template-columns:1fr;gap:44px}
+  .m5-card{grid-template-columns:64px 1fr}.m5-card .ic{width:64px;height:64px}
+  .m5-ring{display:none}.m5-foot{flex-direction:column}
+}
+
+@media (prefers-reduced-motion: reduce){.m1-glow,.m4-strip div{animation:none}*{transition:none!important}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="ic-hive" viewBox="0 0 64 64">
+      <path d="M6 30 L32 8 L58 30 V58 H6 Z" fill="#F2B33D" stroke="#5A3A08" stroke-width="3" stroke-linejoin="round"/>
+      <g fill="#FFE39A" stroke="#5A3A08" stroke-width="1.6" stroke-linejoin="round">
+        <polygon points="27.5,26.8 32,29.4 32,34.6 27.5,37.2 23,34.6 23,29.4"/>
+        <polygon points="36.5,26.8 41,29.4 41,34.6 36.5,37.2 32,34.6 32,29.4"/>
+        <polygon points="23,34.6 27.5,37.2 27.5,42.4 23,45 18.5,42.4 18.5,37.2"/>
+        <polygon points="32,34.6 36.5,37.2 36.5,42.4 32,45 27.5,42.4 27.5,37.2"/>
+        <polygon points="41,34.6 45.5,37.2 45.5,42.4 41,45 36.5,42.4 36.5,37.2"/>
+        <polygon points="27.5,42.4 32,45 32,50.2 27.5,52.8 23,50.2 23,45"/>
+        <polygon points="36.5,42.4 41,45 41,50.2 36.5,52.8 32,50.2 32,45"/>
+      </g>
+    </symbol>
+    <symbol id="ic-door" viewBox="0 0 64 64">
+      <path d="M12 60 V28 A20 20 0 0 1 52 28 V60 Z" fill="#3B2414"/>
+      <path d="M19 60 V29 A13 13 0 0 1 45 29 V60 Z" fill="#FFB547"/>
+      <path d="M24 60 V31 A8 8 0 0 1 40 31 V60 Z" fill="#FFF0C7"/>
+    </symbol>
+    <radialGradient id="g-spill" cx="50%" cy="0%" r="80%"><stop offset="0" stop-color="#FFD27A" stop-opacity=".55"/><stop offset="1" stop-color="#FFD27A" stop-opacity="0"/></radialGradient>
+    <radialGradient id="g-halo" cx="50%" cy="60%" r="50%"><stop offset="0" stop-color="#FFD27A" stop-opacity=".45"/><stop offset="1" stop-color="#FFD27A" stop-opacity="0"/></radialGradient>
+    <linearGradient id="g-in" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFF4D6"/><stop offset="1" stop-color="#FFB547"/></linearGradient>
+  </defs>
+</svg>
+
+<div class="shell">
+  <header class="shell-head">
+    <h1>Tibi Lab homepage concepts</h1>
+    <p>Five directions for tibi-lab.com, each with the same content: Home Hive, Story Taler, Studio and Legal. Pick one, or point at the parts you like. Links inside the mockups are placeholders.</p>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Concepts" id="tabs"></nav>
+
+  <section class="brief" aria-live="polite">
+    <div><strong id="b-name"></strong><p id="b-why"></p></div>
+    <div class="view" role="group" aria-label="Preview width">
+      <button class="viewbtn" id="v-desk" aria-pressed="true" type="button">Desktop</button>
+      <button class="viewbtn" id="v-phone" aria-pressed="false" type="button">Phone</button>
+    </div>
+  </section>
+
+  <div class="frame" id="frame">
+
+    <!-- 1. TWO DOORS -->
+    <section class="mock m1" id="two-doors" hidden>
+      <div class="m1-nav">
+        <a class="m1-logo" href="#"><svg class="ic" aria-hidden="true"><use href="#ic-hive"/></svg>Tibi Lab</a>
+        <nav class="m1-links"><a href="#">Apps</a><a href="#">Studio</a><a href="#">Legal</a></nav>
+      </div>
+      <div class="m1-split">
+        <div class="m1-half m1-hive">
+          <h1 class="m1-h1">Pick a</h1>
+          <svg class="m1-art" viewBox="0 0 64 64" aria-hidden="true"><use href="#ic-hive"/></svg>
+          <h2>Home Hive</h2>
+          <p>Know what you own, where the receipt is, and when the warranty runs out.</p>
+          <a class="m1-btn" href="#">Open Home Hive <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="m1-half m1-door">
+          <h1 class="m1-h1" aria-hidden="true">door.</h1>
+          <svg class="m1-art" viewBox="0 0 120 120" aria-hidden="true">
+            <ellipse class="m1-glow" cx="60" cy="62" rx="58" ry="52" fill="url(#g-halo)"/>
+            <path d="M22 104 V48 A38 38 0 0 1 98 48 V104 Z" fill="#0D1730"/>
+            <path d="M32 104 V50 A28 28 0 0 1 88 50 V104 Z" fill="url(#g-in)"/>
+            <path class="m1-glow" d="M32 104 L88 104 L118 120 L2 120 Z" fill="url(#g-spill)"/>
+            <rect x="56" y="72" width="8" height="32" rx="2" fill="#E59A2B" opacity=".55"/>
+          </svg>
+          <h2>Story Taler</h2>
+          <p>Learn Danish by reading, listening and practising with illustrated stories from everyday Denmark.</p>
+          <a class="m1-btn" href="#">Open Story Taler <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+      <div class="m1-foot"><span>Tibi Lab, a small app studio</span><a href="#">Legal documents ↗</a></div>
+    </section>
+
+    <!-- 2. NORDIC INDEX -->
+    <section class="mock m2" id="nordic-index" hidden>
+      <div class="m2-in">
+        <div class="m2-nav">
+          <a class="m2-logo" href="#">Tibi <i>Lab</i></a>
+          <nav class="m2-links"><a href="#">Apps</a><a href="#">Studio</a><a href="#">Legal</a></nav>
+        </div>
+        <div class="m2-hero">
+          <h1>Small apps for the <i>ordinary</i> parts of life.</h1>
+          <p>Tibi Lab is an independent studio. Each app does one job, quietly and well.</p>
+        </div>
+        <div class="m2-label"><span>Apps</span><span>2</span></div>
+        <a class="m2-row" href="#">
+          <svg class="ic" aria-hidden="true"><use href="#ic-hive"/></svg>
+          <h2>Home Hive</h2>
+          <p>Household inventory, receipts and warranty reminders.<span class="m2-detail">Next warranty ends in 3 months · Dishwasher</span></p>
+          <span class="m2-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="m2-row" href="#">
+          <svg class="ic" aria-hidden="true"><use href="#ic-door"/></svg>
+          <h2>Story Taler</h2>
+          <p>Learn Danish by reading, listening and practising.<span class="m2-detail">Dagens ord: hyggelig · cosy, pleasant</span></p>
+          <span class="m2-arrow" aria-hidden="true">→</span>
+        </a>
+        <div class="m2-studio">
+          <h3>Studio</h3>
+          <p>One maker, a few careful apps, and no ads. Questions or ideas are always welcome.</p>
+        </div>
+        <div class="m2-foot"><span>© 2026 Tibi Lab</span><a href="#">Legal documents</a></div>
+      </div>
+    </section>
+
+    <!-- 3. KITCHEN TABLE -->
+    <section class="mock m3" id="kitchen-table" hidden>
+      <div class="m3-nav">
+        <a class="m3-tape" href="#">TIBI LAB</a>
+        <nav class="m3-links"><a href="#">Apps</a><a href="#">Studio</a><a href="#">Legal</a></nav>
+      </div>
+      <div class="m3-table">
+        <a class="m3-obj m3-receipt" href="#">
+          <svg class="ic" aria-hidden="true"><use href="#ic-hive"/></svg>
+          <h2>HOME HIVE</h2>
+          <p class="m3-c">your household, itemised</p>
+          <hr class="m3-hr">
+          <div class="m3-line"><span>Dishwasher</span><span>4 999,00</span></div>
+          <div class="m3-sub">↳ warranty until 03/2028</div>
+          <div class="m3-line"><span>Winter jacket</span><span>1 299,00</span></div>
+          <div class="m3-sub">↳ receipt saved ✓</div>
+          <div class="m3-line"><span>Coffee grinder</span><span>749,00</span></div>
+          <div class="m3-sub">↳ reminder in 2 months</div>
+          <hr class="m3-hr">
+          <div class="m3-line"><b>LOST RECEIPTS</b><b>0</b></div>
+          <span class="m3-cta">OPEN HOME HIVE →</span>
+        </a>
+        <a class="m3-obj m3-book" href="#">
+          <div><small>Danish through stories</small><h2>Story Taler</h2></div>
+          <svg viewBox="0 0 64 64" aria-hidden="true"><use href="#ic-door"/></svg>
+          <div>
+            <p>Kapitel 1: Bageren på hjørnet</p>
+            <div class="m3-chips"><span>Begynder</span><span>Mellem</span><span>Øvet</span></div>
+          </div>
+        </a>
+        <div class="m3-note">
+          <p>Tibi Lab makes apps for the everyday stuff: the drawer of receipts, the language you're learning.</p>
+          <p><a href="#">about the studio →</a></p>
+        </div>
+      </div>
+      <div class="m3-foot"><span>Tibi Lab · DKK prices are examples</span><a href="#">Legal documents ↗</a></div>
+    </section>
+
+    <!-- 4. LOUD TYPE -->
+    <section class="mock m4" id="loud-type" hidden>
+      <div class="m4-nav"><a href="#">Tibi Lab</a><nav class="m4-links"><a href="#">Apps</a><a href="#">Studio</a><a href="#">Legal</a></nav></div>
+      <p class="m4-intro">Tibi Lab makes two apps. Here they are, at full size.</p>
+      <a class="m4-app hive" href="#">
+        <svg class="ic" aria-hidden="true"><use href="#ic-hive"/></svg>
+        <span class="m4-name">Home Hive</span>
+        <span class="m4-meta"><span>Household inventory, receipts and warranty reminders.</span><b>Open →</b></span>
+      </a>
+      <div class="m4-strip" aria-hidden="true"><div>INVENTORY ✦ RECEIPTS ✦ WARRANTIES ✦ LÆS ✦ LYT ✦ ØV ✦ INVENTORY ✦ RECEIPTS ✦ WARRANTIES ✦ LÆS ✦ LYT ✦ ØV ✦ INVENTORY ✦ RECEIPTS ✦ WARRANTIES ✦ LÆS ✦ LYT ✦ ØV ✦ INVENTORY ✦ RECEIPTS ✦ WARRANTIES ✦ LÆS ✦ LYT ✦ ØV ✦&nbsp;</div></div>
+      <a class="m4-app taler" href="#">
+        <svg class="ic" aria-hidden="true"><use href="#ic-door"/></svg>
+        <span class="m4-name">Story Taler</span>
+        <span class="m4-meta"><span>Learn Danish by reading, listening and practising.</span><b>Open →</b></span>
+      </a>
+      <div class="m4-foot"><a href="#">Studio</a><a href="#">Legal documents ↗</a></div>
+    </section>
+
+    <!-- 5. LAB NOTEBOOK -->
+    <section class="mock m5" id="lab-notebook" hidden>
+      <div class="m5-ring" aria-hidden="true"></div>
+      <div class="m5-in">
+        <div class="m5-nav">
+          <a class="m5-logo" href="#"><b>Tibi</b> LAB</a>
+          <nav class="m5-links"><a href="#">Apps</a><a href="#">Studio</a><a href="#">Legal</a></nav>
+        </div>
+        <div class="m5-hero">
+          <div class="m5-date">Notebook · p. 1</div>
+          <h1>Small experiments that grew into <span class="m5-hl">real apps</span>.</h1>
+          <p>Tibi Lab is where ideas get tested until they're useful. Two of them made it out of the notebook so far.</p>
+        </div>
+        <div class="m5-specs">
+          <a class="m5-spec" href="#">
+            <div class="m5-card">
+              <svg class="ic" aria-hidden="true"><use href="#ic-hive"/></svg>
+              <div><small>Specimen A</small><h2>Home Hive</h2><p>Household inventory, receipts and warranty reminders.</p></div>
+            </div>
+            <div class="m5-notes">
+              <svg viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20 C12 4 24 2 36 10 M30 4 L36 10 L28 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>every receipt in one place</span>
+              <svg viewBox="0 0 40 24" aria-hidden="true"><path d="M2 6 C14 20 26 20 36 12 M29 10 L36 12 L32 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>nudges you before a warranty runs out</span>
+            </div>
+            <span class="m5-go">open Home Hive →</span>
+          </a>
+          <a class="m5-spec" href="#">
+            <div class="m5-card">
+              <svg class="ic" aria-hidden="true"><use href="#ic-door"/></svg>
+              <div><small>Specimen B</small><h2>Story Taler</h2><p>Learn Danish by reading, listening and practising.</p></div>
+            </div>
+            <div class="m5-notes">
+              <svg viewBox="0 0 40 24" aria-hidden="true"><path d="M2 20 C12 4 24 2 36 10 M30 4 L36 10 L28 13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>læs ✓ lyt ✓ øv ✓</span>
+              <svg viewBox="0 0 40 24" aria-hidden="true"><path d="M2 6 C14 20 26 20 36 12 M29 10 L36 12 L32 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>stories set in everyday Denmark</span>
+            </div>
+            <span class="m5-go">open Story Taler →</span>
+          </a>
+        </div>
+        <div class="m5-foot"><a href="#">More about the studio</a><a href="#">Legal documents ↗</a></div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<script>
+const CONCEPTS=[
+  {id:'two-doors',name:'Two Doors',why:'Playful and illustrative. The page is a choice between two apps, so it splits down the middle: honey for the household, night blue for the glowing story door.'},
+  {id:'nordic-index',name:'Nordic Index',why:'Calm Scandinavian catalogue. Lots of air, a serif for the app names, and each app as one row with a small live detail.'},
+  {id:'kitchen-table',name:'Kitchen Table',why:'Tactile objects. Each app appears as the real thing it replaces: a till receipt for Home Hive, a paperback for Story Taler, on a linoleum table.'},
+  {id:'loud-type',name:'Loud Type',why:'Bold typographic. With only two products, the names are the design: wall-to-wall type in one colour, nothing else competing.'},
+  {id:'lab-notebook',name:'Lab Notebook',why:'Leans into the "Lab" in Tibi Lab: graph paper, taped specimens and handwritten notes, like a maker\'s notebook.'}
+];
+const tabs=document.getElementById('tabs'),frame=document.getElementById('frame');
+CONCEPTS.forEach((c,i)=>{const b=document.createElement('button');b.className='tab';b.type='button';b.role='tab';b.id='tab-'+c.id;b.innerHTML='<span>'+(i+1)+'</span>'+c.name;b.onclick=()=>{location.hash=c.id};tabs.appendChild(b)});
+function show(){
+  const id=(location.hash||'').slice(1);const c=CONCEPTS.find(x=>x.id===id)||CONCEPTS[0];
+  document.querySelectorAll('.mock').forEach(m=>m.hidden=m.id!==c.id);
+  document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-selected',t.id==='tab-'+c.id));
+  document.getElementById('b-name').textContent=c.name;document.getElementById('b-why').textContent=c.why;
+  frame.scrollTop=0;
+}
+addEventListener('hashchange',show);show();
+frame.addEventListener('click',e=>{if(e.target.closest('a'))e.preventDefault()});
+const vd=document.getElementById('v-desk'),vp=document.getElementById('v-phone');
+function setView(p){frame.classList.toggle('phone',p);vd.setAttribute('aria-pressed',!p);vp.setAttribute('aria-pressed',p);try{localStorage.setItem('tl-view',p?'phone':'desk')}catch(e){}}
+vd.onclick=()=>setView(false);vp.onclick=()=>setView(true);
+try{if(localStorage.getItem('tl-view')==='phone')setView(true)}catch(e){}
+</script>
