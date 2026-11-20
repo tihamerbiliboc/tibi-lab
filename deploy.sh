@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Publish site/ to tibi-lab.com (Simply.com Windows webhotel, server nt7.unoeuro.com).
+# Publish site/ to tibi-lab.com (Simply.com Windows webhotel, FTP host ftp.simply.com).
 #
 # Uploads over encrypted FTP (FTPS) as user tibi-lab.com into public_html/ and mirrors it
 # exactly: files that are not in site/ are removed from the server (except .well-known/).
@@ -33,7 +33,7 @@ export LFTP_PASSWORD
 lftp -c "
   set ftp:ssl-force true; set ftp:ssl-protect-data true; set ssl:verify-certificate true;
   set net:max-retries 2; set net:timeout 30; set cmd:fail-exit true;
-  open --env-password -u tibi-lab.com ftp://nt7.unoeuro.com;
+  open --env-password -u tibi-lab.com ftp://ftp.simply.com;
   mirror --reverse --delete --no-perms --verbose --parallel=4 $DRY_RUN --exclude-glob .well-known/ site/ public_html/
 "
 
