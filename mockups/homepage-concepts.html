@@ -6,7 +6,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Mono:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Condensed:wght@300;400;500&family=Instrument+Sans:wght@400..700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400..700&family=Manrope:wght@400..700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=DM+Mono:wght@400;500&family=Geist:wght@400..700&family=Geist+Mono:wght@400;500&family=Instrument+Sans:wght@400..700&family=Instrument+Serif:ital@0;1&family=Inter:wght@400..700&family=Manrope:wght@400..700&display=swap">
 <style>
 /* Shell: a quiet review bench. Tabs, an app-count control, and the chosen mockup in a frame that is a size container, so "Phone" shows the real mobile layout. */
 :root{
@@ -197,53 +197,67 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);font-size:15px
 }
 
 /* ============ 5. BLUEPRINT ============ */
-/* Engineering drawing: deep navy sheet, fine grid, hairline figures with brass call-outs and a proper title block. */
-.m5{--navy:#0E1A2B;--grid:rgba(150,180,220,.06);--grid-2:rgba(150,180,220,.12);--line:rgba(190,210,235,.28);--paper:#E3E8EF;--soft:#8D9AAE;--brass:#C2A36B;
-  --f-disp:'IBM Plex Sans Condensed','Arial Narrow',sans-serif;--f-mono:'IBM Plex Mono',ui-monospace,monospace;
-  font-family:var(--f-mono);color:var(--paper);
-  background-color:var(--navy);
-  background-image:linear-gradient(var(--grid-2) 1px,transparent 1px),linear-gradient(90deg,var(--grid-2) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-  background-size:120px 120px,120px 120px,24px 24px,24px 24px}
-.m5-in{padding:0 5cqi}
-.m5-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:24px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid var(--line)}
-.m5-logo{color:var(--paper);text-decoration:none;font-family:var(--f-disp);font-size:18px;letter-spacing:.2em;font-weight:500}
+/* Modern technical sheet: deep navy, a grid that fades out, glass panels, one brass accent. The hero is a dimensioned drawing of the Tibi Lab mark. */
+.m5{--navy:#0A1322;--navy-2:#0E1A2E;--panel:rgba(150,180,225,.035);--panel-2:rgba(150,180,225,.06);--line:rgba(170,195,230,.13);--line-2:rgba(170,195,230,.24);--text:#E7EBF1;--soft:#8C99AE;--brass:#CFB079;--brass-l:#E6CF9F;
+  --f-disp:'Geist','Inter',system-ui,sans-serif;--f-mono:'Geist Mono',ui-monospace,monospace;
+  position:relative;isolation:isolate;font-family:var(--f-disp);color:var(--text);
+  background:radial-gradient(60% 50% at 85% 0%,rgba(207,176,121,.10),transparent 70%),radial-gradient(50% 40% at 0% 100%,rgba(90,130,200,.10),transparent 70%),var(--navy)}
+.m5::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);background-size:32px 32px;
+  -webkit-mask-image:radial-gradient(120% 70% at 70% 10%,#000 0%,transparent 75%);mask-image:radial-gradient(120% 70% at 70% 10%,#000 0%,transparent 75%)}
+.m5-in{max-width:1180px;margin-inline:auto;padding:0 5cqi}
+.m5-nav{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:22px}
+.m5-logo{color:var(--text);text-decoration:none;font-weight:600;font-size:17px;letter-spacing:-.01em}
 .m5-logo span{color:var(--brass)}
-.m5-links{display:flex;gap:24px}
-.m5-links a{color:var(--soft);text-decoration:none}
-.m5-links a:hover{color:var(--paper)}
-.m5-hero{padding-block:6cqi 4cqi;max-width:900px}
-.m5-date{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
-.m5-hero h1{margin:12px 0 0;font-family:var(--f-disp);font-weight:300;font-size:clamp(46px,7cqi,96px);line-height:.98;letter-spacing:-.01em;text-wrap:balance}
-.m5-hero h1 span{color:var(--brass);font-weight:400}
-.m5-hero p{margin:18px 0 0;font-size:14px;max-width:56ch;line-height:1.7;color:var(--soft)}
-.m5-specs{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:36px 4cqi;padding-block:4cqi 6cqi}
-.m5-spec{position:relative;display:grid;gap:16px;color:inherit;text-decoration:none;align-content:start;padding:26px;border:1px solid var(--line);transition:border-color .3s,background .3s}
-.m5-spec:hover{border-color:var(--brass);background:rgba(194,163,107,.04)}
-.m5-spec::before,.m5-spec::after{content:"";position:absolute;width:12px;height:12px;border:1px solid var(--brass)}
-.m5-spec::before{top:-6px;left:-6px;border-width:1px 0 0 1px}.m5-spec::after{bottom:-6px;right:-6px;border-width:0 1px 1px 0}
-.m5-top{display:grid;grid-template-columns:84px 1fr;gap:20px;align-items:center}
-.m5-fig{width:84px;height:84px;border:1px dashed var(--line);border-radius:50%;display:grid;place-items:center}
-.m5-fig .ic{width:52px;height:52px}
-.m5-fig .gen{width:52px;height:52px;font-family:var(--f-disp);font-size:26px;border-radius:50%;background:transparent;border:1px solid var(--c);color:var(--paper)}
-.m5-spec small{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
-.m5-spec h2{margin:4px 0 6px;font-family:var(--f-disp);font-weight:400;font-size:30px;line-height:1}
-.m5-spec p{margin:0;font-size:13px;line-height:1.6;color:var(--soft)}
-.m5-notes{display:grid;gap:6px;font-size:12px;color:var(--paper)}
-.m5-notes span{display:flex;gap:10px;align-items:center}
-.m5-notes span::before{content:"";width:28px;height:1px;background:var(--brass);flex:none}
-.m5-go{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass)}
-.m5-title{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border:1px solid var(--line);margin-bottom:28px;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
-.m5-title div{padding:10px 14px;border-left:1px solid var(--line);display:grid;gap:2px}
+.m5-links{display:flex;gap:6px;padding:4px;border:1px solid var(--line);border-radius:999px;background:var(--panel);backdrop-filter:blur(8px)}
+.m5-links a{color:var(--soft);text-decoration:none;font-size:13px;font-weight:500;padding:6px 14px;border-radius:999px;transition:color .2s,background .2s}
+.m5-links a:hover{color:var(--text);background:var(--panel-2)}
+.m5-hero{display:grid;grid-template-columns:1.15fr 1fr;gap:5cqi;align-items:center;padding-block:6cqi 5cqi}
+.m5-eyebrow{display:inline-flex;gap:10px;align-items:center;font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--brass)}
+.m5-eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--brass);box-shadow:0 0 0 4px rgba(207,176,121,.15)}
+.m5-hero h1{margin:18px 0 0;font-weight:500;font-size:clamp(42px,6.2cqi,84px);line-height:1;letter-spacing:-.04em;text-wrap:balance}
+.m5-hero h1 span{background:linear-gradient(180deg,var(--brass-l),var(--brass));-webkit-background-clip:text;background-clip:text;color:transparent}
+.m5-hero p{margin:20px 0 0;font-size:17px;max-width:44ch;line-height:1.6;color:var(--soft)}
+.m5-draw{width:100%;max-width:440px;height:auto;justify-self:end;overflow:visible}
+.m5-draw .dim{stroke:var(--line-2);stroke-width:1;fill:none}
+.m5-draw .cl{stroke:var(--line-2);stroke-width:1;stroke-dasharray:4 5;fill:none}
+.m5-draw text{font-family:var(--f-mono);font-size:10.5px;fill:var(--soft);letter-spacing:.08em}
+.m5-draw .mkline{stroke:var(--brass);fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:0;animation:m5draw 1.8s cubic-bezier(.6,0,.2,1) both}
+.m5-draw .mkline.s2{animation-delay:.5s}
+@keyframes m5draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.m5-label{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:14px;border-bottom:1px solid var(--line);font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);font-variant-numeric:tabular-nums}
+.m5-specs{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;padding-block:24px 6cqi}
+.m5-spec{position:relative;display:grid;gap:18px;color:inherit;text-decoration:none;align-content:start;padding:24px;border:1px solid var(--line);border-radius:18px;
+  background:linear-gradient(180deg,var(--panel-2),var(--panel));transition:border-color .3s,transform .3s,background .3s}
+.m5-spec:hover{border-color:rgba(207,176,121,.45);transform:translateY(-3px);background:linear-gradient(180deg,rgba(207,176,121,.07),var(--panel))}
+.m5-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.m5-fig{width:60px;height:60px;border-radius:16px;border:1px solid var(--line-2);background:rgba(10,19,34,.6);display:grid;place-items:center}
+.m5-fig .ic{width:38px;height:38px}
+.m5-fig .gen{width:38px;height:38px;font-size:18px;font-weight:500;border-radius:11px;background:transparent;border:1px solid var(--c);color:var(--text)}
+.m5-spec small{font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);display:flex;gap:8px;align-items:center}
+.m5-spec small .ex{font-family:var(--f-mono);color:var(--brass);opacity:.8}
+.m5-spec h2{margin:0 0 6px;font-weight:500;font-size:26px;letter-spacing:-.02em;line-height:1.1}
+.m5-spec p{margin:0;font-size:14px;line-height:1.6;color:var(--soft)}
+.m5-notes{display:grid;gap:8px;margin:0;padding:14px 0 0;border-top:1px dashed var(--line);list-style:none;font-family:var(--f-mono);font-size:12px;color:var(--text)}
+.m5-notes li{display:flex;gap:10px;align-items:center}
+.m5-notes li::before{content:"";width:14px;height:1px;background:var(--brass);flex:none}
+.m5-go{display:inline-flex;gap:8px;align-items:center;font-size:13px;font-weight:500;color:var(--brass)}
+.m5-go i{font-style:normal;transition:transform .3s}
+.m5-spec:hover .m5-go i{transform:translateX(4px)}
+.m5-title{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-bottom:32px;background:var(--panel);font-size:13px}
+.m5-title div{padding:14px 18px;border-left:1px solid var(--line);display:grid;gap:4px;min-width:0}
 .m5-title div:first-child{border-left:0}
-.m5-title b{font-weight:400;color:var(--soft);font-size:10px}
-.m5-title a{color:var(--paper)}
-@container mock (max-width:700px){
-  .m5-in{padding:0 18px}.m5-links{gap:14px}
-  .m5-specs{grid-template-columns:1fr;gap:28px}
-  .m5-top{grid-template-columns:64px 1fr;gap:16px}.m5-fig{width:64px;height:64px}.m5-fig .ic,.m5-fig .gen{width:40px;height:40px}
+.m5-title b{font-family:var(--f-mono);font-weight:400;color:var(--soft);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase}
+.m5-title a{color:var(--text);text-decoration:none}
+.m5-title a:hover{color:var(--brass)}
+@container mock (max-width:760px){
+  .m5-in{padding:0 18px}.m5-links a{padding:6px 10px}
+  .m5-hero{grid-template-columns:1fr;padding-block:36px 32px;gap:28px}
+  .m5-draw{justify-self:center;max-width:300px}
+  .m5-specs{grid-template-columns:1fr;gap:14px}
   .m5-title{grid-template-columns:1fr 1fr}.m5-title div:nth-child(3){border-left:0}.m5-title div:nth-child(n+3){border-top:1px solid var(--line)}
 }
-
+@media (prefers-reduced-motion: reduce){.m5-draw .mkline{animation:none}}
 @media (prefers-reduced-motion: reduce){.m4-strip div{animation:none}*{transition:none!important}}
 </style>
 
@@ -356,17 +370,33 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);font-size:15px
     <section class="mock m5" id="blueprint" hidden>
       <div class="m5-in">
         <div class="m5-nav">
-          <a class="m5-logo" href="#"><svg class="mk" viewBox="0 0 32 32" aria-hidden="true"><use href="#ic-lab"/></svg>TIBI <span>LAB</span></a>
+          <a class="m5-logo" href="#"><svg class="mk" viewBox="0 0 32 32" aria-hidden="true"><use href="#ic-lab"/></svg>Tibi <span>Lab</span></a>
           <nav class="m5-links"><a href="#">Apps</a><a href="#">About</a><a href="#">Legal</a></nav>
         </div>
         <div class="m5-hero">
-          <div class="m5-date">Sheet 01 · Applications</div>
-          <h1>Small ideas, drawn carefully, built into <span>real apps</span>.</h1>
-          <p>Tibi Lab is an independent app maker. Every app starts as a drawing and gets refined until it does its one job properly.</p>
+          <div>
+            <span class="m5-eyebrow">Sheet 01 · Applications</span>
+            <h1>Small ideas, drawn carefully, built into <span>real apps</span>.</h1>
+            <p>Tibi Lab is an independent app maker. Every app starts as a drawing and gets refined until it does its one job properly.</p>
+          </div>
+          <svg class="m5-draw" viewBox="0 0 360 300" role="img" aria-label="Technical drawing of the Tibi Lab mark">
+            <line class="cl" x1="180" y1="34" x2="180" y2="246"/><line class="cl" x1="76" y1="140" x2="284" y2="140"/>
+            <path class="dim" d="M90 22 V12 M270 22 V12 M90 17 H270"/>
+            <text x="180" y="9" text-anchor="middle">32 PT</text>
+            <path class="dim" d="M278 50 H290 M278 230 H290 M285 50 V230"/>
+            <text x="300" y="143" text-anchor="start">32</text>
+            <path class="dim" d="M104 64 L58 36 H22"/>
+            <text x="22" y="30">R 8</text>
+            <path class="dim" d="M223 180 L262 262 H330"/>
+            <text x="264" y="278">T + L · ONE STROKE</text>
+            <rect class="mkline" pathLength="1" x="90" y="50" width="180" height="180" rx="46" stroke-width="2.5"/>
+            <path class="mkline s2" pathLength="1" d="M136.5 102.7 H223.3 M179.9 102.7 V180.2 H223.3" stroke-width="14"/>
+          </svg>
         </div>
+        <div class="m5-label"><span>Index of apps</span><span><span data-count></span> drawings</span></div>
         <div class="m5-specs" data-list="m5"></div>
         <div class="m5-title">
-          <div><b>About</b><a href="#">Tibi Lab · about Tibi Lab</a></div>
+          <div><b>About</b><a href="#">Tibi Lab · independent app maker</a></div>
           <div><b>Apps</b><span data-count></span></div>
           <div><b>Revision</b><span>2026</span></div>
           <div><b>Legal</b><a href="#">Documents ↗</a></div>
@@ -383,7 +413,7 @@ const CONCEPTS=[
   {id:'nordic-index',name:'Nordic Index',why:'Calm Scandinavian catalogue in stone, graphite and bronze. Serif app names, one row per app with a small live detail.'},
   {id:'felt-brass',name:'Felt & Brass',why:'Tactile luxury. Deep green felt, ivory letterpress cards held by brass pins, and an engraved brass nameplate as the logo.'},
   {id:'loud-type',name:'Loud Type',why:'Bold typographic in oxblood and ivory. The app names are the design, stacked like a wine list that gets longer over time.'},
-  {id:'blueprint',name:'Blueprint',why:'Plays on the "Lab": a navy engineering sheet with fine grid, hairline figure boxes, brass call-outs and a title block as the footer.'}
+  {id:'blueprint',name:'Blueprint',why:'Modern technical sheet. Deep navy, a grid that fades out, glass panels and one brass accent; the hero is a dimensioned drawing of the Tibi Lab mark.'}
 ];
 const APPS=[
   {name:'Home Hive',tag:'Household inventory, receipts and warranty reminders.',icon:'hive',c:'#A88850',detail:'Next warranty ends in 3 months · Dishwasher',notes:['Every receipt in one place','Reminds you before a warranty ends']},
@@ -406,7 +436,7 @@ const R={
   m3:l=>`<div class="m3-studio"><p>Tibi Lab is an independent app maker making small apps for home, language and everyday life.</p><a href="#">About Tibi Lab →</a></div>`+
      l.map(a=>`<a class="m3-card" href="#" style="--c:${a.c}">${icon(a)}<h3>${esc(a.name)}${ex(a)}</h3><p>${esc(a.tag)}</p><b>Open →</b></a>`).join(''),
   m4:l=>l.map(a=>`<a class="m4-app" href="#"><span class="m4-name">${icon(a)}<span>${esc(a.name)}</span></span><span class="m4-meta"><span>${esc(a.tag)}${ex(a)}</span><b>Open →</b></span></a>`).join(''),
-  m5:l=>l.map((a,i)=>`<a class="m5-spec" href="#"><div class="m5-top"><div class="m5-fig">${icon(a)}</div><div><small>Fig. ${String.fromCharCode(65+i)}${ex(a)}</small><h2>${esc(a.name)}</h2><p>${esc(a.tag)}</p></div></div>${a.notes?`<div class="m5-notes"><span>${esc(a.notes[0])}</span><span>${esc(a.notes[1])}</span></div>`:''}<span class="m5-go">Open ${esc(a.name)} →</span></a>`).join('')
+  m5:l=>l.map((a,i)=>`<a class="m5-spec" href="#"><div class="m5-top"><div class="m5-fig">${icon(a)}</div><small>Fig. ${String.fromCharCode(65+i)}${ex(a)}</small></div><div><h2>${esc(a.name)}</h2><p>${esc(a.tag)}</p></div>${a.notes?`<ul class="m5-notes"><li>${esc(a.notes[0])}</li><li>${esc(a.notes[1])}</li></ul>`:''}<span class="m5-go">Open ${esc(a.name)} <i>→</i></span></a>`).join('')
 };
 let count=5;
 function render(){
@@ -425,7 +455,7 @@ render();
 const tabs=document.getElementById('tabs'),frame=document.getElementById('frame');
 CONCEPTS.forEach((c,i)=>{const b=document.createElement('button');b.className='tab';b.type='button';b.setAttribute('role','tab');b.id='tab-'+c.id;b.innerHTML='<span>'+(i+1)+'</span>'+c.name;b.onclick=()=>{location.hash=c.id};tabs.appendChild(b)});
 function show(){
-  const id=(location.hash||'').slice(1);const c=CONCEPTS.find(x=>x.id===id)||CONCEPTS[0];
+  const id=(location.hash||'').slice(1);const c=CONCEPTS.find(x=>x.id===id)||CONCEPTS.find(x=>x.id==='blueprint');
   document.querySelectorAll('.mock').forEach(m=>m.hidden=m.id!==c.id);
   document.querySelectorAll('.tab').forEach(t=>t.setAttribute('aria-selected',t.id==='tab-'+c.id));
   document.getElementById('b-name').textContent=c.name;document.getElementById('b-why').textContent=c.why;
