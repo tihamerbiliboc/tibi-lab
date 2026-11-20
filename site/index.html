@@ -1,0 +1,363 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tibi Lab</title>
+<meta name="description" content="Tibi Lab is an independent software lab that designs, builds and runs its own apps and websites.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Sora:wght@600;700&display=swap">
+<style>
+body{margin:0}
+a{color:inherit;text-decoration:none}
+a:hover{text-decoration:underline}
+@keyframes tl-run{to{transform:translateX(-50%)}}
+@keyframes tl-pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.tl-lift{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.tl-lift:hover{transform:translateY(-4px);box-shadow:0 24px 48px -28px rgba(4,8,20,.55)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div style="background: #EEF2F7; color: #0A1020; font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif; font-size: 17px; line-height: 1.6; overflow-x: hidden">
+
+  <!-- HERO (dark navy block with nav) -->
+  <section id="top" style="background-color: #0A1020; background-image: radial-gradient(rgba(138,180,255,0.13) 1.2px, transparent 1.2px); background-size: 28px 28px; color: #FFFFFF">
+    <header style="max-width: 1120px; margin: 0 auto; padding: 16px 24px; display: flex; flex-wrap: wrap; gap: 8px 24px; align-items: center; justify-content: space-between">
+      <a href="#top" style="display: flex; gap: 12px; align-items: center; min-height: 44px; font-family: 'Sora', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: 19px; letter-spacing: -0.01em">
+        <svg viewBox="0 0 32 32" width="30" height="30" aria-hidden="true" style="display: block; color: #8AB4FF">
+          <rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="none" stroke="currentColor" stroke-width="2.4"></rect>
+          <path d="M9 10 H23 M16 10 V22.5 H23" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <span>Tibi Lab</span>
+      </a>
+      <nav aria-label="Main" style="display: flex; flex-wrap: wrap; gap: 4px 6px; align-items: center; font-size: 15px; font-weight: 500; color: #D5DDEC">
+        <a href="#products" style="padding: 10px 12px; min-height: 44px; box-sizing: border-box">Apps</a>
+        <a href="#lab" style="padding: 10px 12px; min-height: 44px; box-sizing: border-box">Projects</a>
+        <a href="#method" style="padding: 10px 12px; min-height: 44px; box-sizing: border-box">Method</a>
+        <a href="#legal" style="padding: 10px 12px; min-height: 44px; box-sizing: border-box">Legal</a>
+        <a href="#contact" style="padding: 10px 18px; min-height: 44px; box-sizing: border-box; border-radius: 8px; border: 1px solid #3A4A68; color: #FFFFFF">Contact</a>
+      </nav>
+    </header>
+
+    <div style="max-width: 1120px; margin: 0 auto; padding: 64px 24px 104px; display: flex; flex-wrap: wrap; gap: 56px 64px; align-items: center">
+      <div style="flex: 999 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 24px; align-items: flex-start">
+        <div style="display: inline-flex; gap: 10px; align-items: center; padding: 6px 14px; border-radius: 6px; border: 1px solid #26324A; background: #111A2E; font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; color: #C9D6EE">
+          <span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #22D3EE; animation: tl-pulse 2.8s ease-in-out infinite"></span>
+          <span>Independent software lab · Denmark</span>
+        </div>
+        <h1 style="margin: 0; font-family: 'Sora', 'Helvetica Neue', Arial, sans-serif; font-weight: 700; font-size: clamp(40px, 5.6vw, 72px); line-height: 1.04; letter-spacing: -0.035em; text-wrap: balance">Ideas, turned into <span style="color: #8AB4FF">working software.</span></h1>
+        <p style="margin: 0; max-width: 54ch; font-size: 19px; line-height: 1.6; color: #C9D6EE">Tibi Lab designs, builds and runs its own apps and websites. The domains change from project to project. The standard does not: useful, carefully made and looked after once released.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px">
+          <a href="#products" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; box-sizing: border-box; border-radius: 8px; font-weight: 600; color: #FFFFFF; background: #2563EB">See the apps</a>
+          <a href="#contact" style="display: inline-flex; align-items: center; min-height: 52px; padding: 0 26px; box-sizing: border-box; border-radius: 8px; font-weight: 600; border: 1px solid #4A5C80; color: #FFFFFF">Get in touch</a>
+        </div>
+      </div>
+
+      <!-- app previews, static -->
+      <div aria-hidden="true" style="flex: 1 1 340px; min-width: 0; display: flex; flex-direction: column; gap: 16px; max-width: 440px; color: #FFFFFF">
+        <div style="background: #111A2E; border: 1px solid #26324A; border-radius: 14px; padding: 20px; box-shadow: 0 30px 60px -32px rgba(0,0,0,0.8)">
+          <div style="display: flex; gap: 14px; align-items: center">
+            <img src="home-hive-icon.png" alt="" style="flex: none; width: 52px; height: 52px; border-radius: 12px; object-fit: cover">
+            <div style="min-width: 0">
+              <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #A5B4CF">Home Hive · Reminder</div>
+              <div style="font-weight: 600; font-size: 16px; line-height: 1.35">Your dishwasher's warranty ends in 14 days</div>
+            </div>
+          </div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; font-size: 13px; font-weight: 500">
+            <span style="padding: 4px 12px; border-radius: 6px; background: #F4D65E; color: #2E3A43">Receipt saved</span>
+            <span style="padding: 4px 12px; border-radius: 6px; background: #1A2336; color: #C9D6EE">Kitchen</span>
+            <span style="padding: 4px 12px; border-radius: 6px; background: #1A2336; color: #C9D6EE">Bought 2024</span>
+          </div>
+        </div>
+        <div style="background: #111A2E; border: 1px solid #26324A; border-radius: 14px; padding: 20px; box-shadow: 0 30px 60px -32px rgba(0,0,0,0.8)">
+          <div style="display: flex; gap: 14px; align-items: center">
+            <img src="story-taler-icon.png" alt="" style="flex: none; width: 52px; height: 52px; border-radius: 12px; object-fit: cover">
+            <div style="min-width: 0">
+              <div style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #A5B4CF">Story Taler · Chapter 3</div>
+              <div style="font-weight: 600; font-size: 16px; line-height: 1.35">Ved havnen</div>
+            </div>
+          </div>
+          <div style="height: 6px; border-radius: 6px; background: #1A2336; margin-top: 16px; overflow: hidden"><div style="width: 62%; height: 100%; border-radius: 6px; background: #D5CCFF"></div></div>
+          <div style="display: flex; justify-content: space-between; gap: 12px; margin-top: 10px; font-size: 13px; color: #A5B4CF">
+            <span>Reading and listening</span>
+            <span>8 min left</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOVING STRIP -->
+  <div aria-hidden="true" style="background: #060B16; color: #D5DDEC; border-top: 1px solid #1A2336; overflow: hidden; white-space: nowrap; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-weight: 500; font-size: 14px; letter-spacing: 0.08em; text-transform: uppercase; padding: 16px 0">
+    <div style="display: inline-flex; width: max-content; animation: tl-run 192s linear infinite">
+      <div style="display: inline-flex; gap: 28px; align-items: center; padding-right: 28px">
+        <span>iOS apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Android apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Web apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Backends and cloud</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>From idea to release</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Websites</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+      </div>
+      <div style="display: inline-flex; gap: 28px; align-items: center; padding-right: 28px">
+        <span>iOS apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Android apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Web apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Backends and cloud</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>From idea to release</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Websites</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+      </div>
+      <div style="display: inline-flex; gap: 28px; align-items: center; padding-right: 28px">
+        <span>iOS apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Android apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Web apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Backends and cloud</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>From idea to release</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Websites</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+      </div>
+      <div style="display: inline-flex; gap: 28px; align-items: center; padding-right: 28px">
+        <span>iOS apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Android apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Web apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Backends and cloud</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>From idea to release</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Websites</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+      </div>
+      <div style="display: inline-flex; gap: 28px; align-items: center; padding-right: 28px">
+        <span>iOS apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Android apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Web apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Backends and cloud</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>From idea to release</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Websites</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+      </div>
+      <div style="display: inline-flex; gap: 28px; align-items: center; padding-right: 28px">
+        <span>iOS apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Android apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Web apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Backends and cloud</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>From idea to release</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Websites</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+      </div>
+      <div style="display: inline-flex; gap: 28px; align-items: center; padding-right: 28px">
+        <span>iOS apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Android apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Web apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Backends and cloud</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>From idea to release</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Websites</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+      </div>
+      <div style="display: inline-flex; gap: 28px; align-items: center; padding-right: 28px">
+        <span>iOS apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Android apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Web apps</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Backends and cloud</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>From idea to release</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+        <span>Websites</span><span style="width: 6px; height: 6px; background: #8AB4FF"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRODUCTS -->
+  <section id="products">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px 80px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <div style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; color: #2563EB">Apps</div>
+        <h2 style="margin: 0; font-family: 'Sora', Arial, sans-serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -0.03em; text-wrap: balance">Designed, built and run by the lab.</h2>
+        <p style="margin: 0; max-width: 60ch; color: #36415A">Each app starts from one everyday problem and stays focused on solving it. Both are in testing on the App Store and Google Play.</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr)); gap: 28px">
+
+        <article class="tl-lift" style="border-radius: 14px; overflow: hidden; background: #FFFFFF; border: 1px solid #CBD3E1; display: flex; flex-direction: column">
+          <div style="background: #4A5C6A; padding: 28px; display: flex; flex-wrap: wrap; gap: 20px 24px; align-items: center; min-height: 200px; box-sizing: border-box">
+            <img src="home-hive-icon.png" alt="Home Hive app icon" style="flex: none; width: 104px; height: 104px; border-radius: 24px; object-fit: cover; box-shadow: 0 16px 32px -16px rgba(0,0,0,0.6)">
+            <div aria-hidden="true" style="flex: 1 1 200px; min-width: 0; display: flex; flex-direction: column; gap: 10px">
+              <div style="align-self: flex-start; background: #FAF7F2; color: #2E3A43; border-radius: 10px; padding: 12px 16px; font-size: 14px; font-weight: 500">Washing machine · receipt saved</div>
+              <div style="align-self: flex-end; background: #F4D65E; color: #2E3A43; border-radius: 10px; padding: 12px 16px; font-size: 14px; font-weight: 600">Warranty ends in 14 days</div>
+            </div>
+          </div>
+          <div style="padding: 28px; display: flex; flex-direction: column; gap: 18px; flex: 1 1 auto">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px">
+              <h3 style="margin: 0; font-family: 'Sora', Arial, sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.02em; line-height: 1.2">Home Hive</h3>
+              <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; background: #E3EBFB; color: #14275C; padding: 4px 10px; border-radius: 4px">In testing</span>
+            </div>
+            <p style="margin: 0; color: #36415A">Household inventory, receipts and warranty reminders.</p>
+            <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 16px">
+              <li style="display: flex; gap: 12px; align-items: center"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; background: #D9B64C"></span><span>Every receipt in one place</span></li>
+              <li style="display: flex; gap: 12px; align-items: center"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; background: #D9B64C"></span><span>Reminds you before a warranty ends</span></li>
+            </ul>
+            <div style="margin-top: auto; padding-top: 18px; border-top: 1px solid #E1E6EF; display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: space-between; align-items: center">
+              <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #36415A">App Store · Google Play</span>
+              <a href="#legal" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; color: #2563EB">Privacy and terms &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="tl-lift" style="border-radius: 14px; overflow: hidden; background: #FFFFFF; border: 1px solid #CBD3E1; display: flex; flex-direction: column">
+          <div style="background: #062426; padding: 28px; display: flex; flex-wrap: wrap; gap: 20px 24px; align-items: center; min-height: 200px; box-sizing: border-box">
+            <img src="story-taler-icon.png" alt="Story Taler app icon" style="flex: none; width: 104px; height: 104px; border-radius: 24px; object-fit: cover; box-shadow: 0 16px 32px -16px rgba(0,0,0,0.6)">
+            <div aria-hidden="true" style="flex: 1 1 200px; min-width: 0; background: #141B2B; border: 1px solid #1E273A; color: #F4F4FA; border-radius: 10px; padding: 16px 18px; display: flex; flex-direction: column; gap: 10px">
+              <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 12px; align-items: baseline">
+                <span style="font-family: 'Sora', Arial, sans-serif; font-weight: 700; font-size: 20px; color: #D5CCFF">hyggelig</span>
+                <span style="font-size: 14px; color: #B9BFD0">cosy, pleasant</span>
+              </div>
+              <div style="height: 6px; border-radius: 6px; background: #1E273A; overflow: hidden"><div style="width: 62%; height: 100%; border-radius: 6px; background: #D5CCFF"></div></div>
+            </div>
+          </div>
+          <div style="padding: 28px; display: flex; flex-direction: column; gap: 18px; flex: 1 1 auto">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px">
+              <h3 style="margin: 0; font-family: 'Sora', Arial, sans-serif; font-weight: 700; font-size: 28px; letter-spacing: -0.02em; line-height: 1.2">Story Taler</h3>
+              <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.04em; text-transform: uppercase; background: #E3EBFB; color: #14275C; padding: 4px 10px; border-radius: 4px">In testing</span>
+            </div>
+            <p style="margin: 0; color: #36415A">Learn Danish by reading, listening and practising.</p>
+            <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 8px; font-size: 16px">
+              <li style="display: flex; gap: 12px; align-items: center"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; background: #062426"></span><span>Read, listen and practise in one flow</span></li>
+              <li style="display: flex; gap: 12px; align-items: center"><span aria-hidden="true" style="flex: none; width: 8px; height: 8px; background: #062426"></span><span>Stories set in everyday Denmark</span></li>
+            </ul>
+            <div style="margin-top: auto; padding-top: 18px; border-top: 1px solid #E1E6EF; display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: space-between; align-items: center">
+              <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #36415A">App Store · Google Play</span>
+              <a href="#legal" style="display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; color: #2563EB">Privacy and terms &rarr;</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT THE LAB BUILDS -->
+  <section id="build" style="background: #111A2E; color: #FFFFFF">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 80px 24px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <div style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; color: #8AB4FF">What the lab builds</div>
+        <h2 style="margin: 0; font-family: 'Sora', Arial, sans-serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -0.03em; text-wrap: balance">From first sketch to release, under one roof.</h2>
+        <p style="margin: 0; max-width: 60ch; color: #C9D6EE">Design, engineering and release all happen in the lab, so every product is held to the same standard, whatever its domain.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 24px">
+        <div class="tl-lift" style="background: #0A1020; border: 1px solid #26324A; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+          <div aria-hidden="true" style="width: 48px; height: 48px; border-radius: 10px; border: 1px solid #3A4A68; background: #16213A; color: #8AB4FF; display: grid; place-items: center">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="7" y="2.5" width="10" height="19" rx="2.5"></rect><path d="M11 18h2"></path></svg>
+          </div>
+          <h3 style="margin: 4px 0 0; font-family: 'Sora', Arial, sans-serif; font-weight: 600; font-size: 21px; letter-spacing: -0.01em">Mobile apps</h3>
+          <p style="margin: 0; font-size: 16px; color: #C9D6EE">iOS and Android apps, taken from an idea to the App Store and Google Play.</p>
+        </div>
+        <div class="tl-lift" style="background: #0A1020; border: 1px solid #26324A; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+          <div aria-hidden="true" style="width: 48px; height: 48px; border-radius: 10px; border: 1px solid #3A4A68; background: #16213A; color: #8AB4FF; display: grid; place-items: center">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="7" rx="2"></rect><rect x="3" y="13" width="18" height="7" rx="2"></rect><path d="M7 7.5h.01M7 16.5h.01"></path></svg>
+          </div>
+          <h3 style="margin: 4px 0 0; font-family: 'Sora', Arial, sans-serif; font-weight: 600; font-size: 21px; letter-spacing: -0.01em">Backends and cloud</h3>
+          <p style="margin: 0; font-size: 16px; color: #C9D6EE">The accounts, data and APIs behind the app, set up to run without babysitting.</p>
+        </div>
+        <div class="tl-lift" style="background: #0A1020; border: 1px solid #26324A; border-radius: 14px; padding: 28px; display: flex; flex-direction: column; gap: 12px">
+          <div aria-hidden="true" style="width: 48px; height: 48px; border-radius: 10px; border: 1px solid #3A4A68; background: #16213A; color: #8AB4FF; display: grid; place-items: center">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M3 9h18M6.5 6.5h.01M9.5 6.5h.01"></path></svg>
+          </div>
+          <h3 style="margin: 4px 0 0; font-family: 'Sora', Arial, sans-serif; font-weight: 600; font-size: 21px; letter-spacing: -0.01em">Websites and web apps</h3>
+          <p style="margin: 0; font-size: 16px; color: #C9D6EE">From a studio's public website to full web applications that run in the browser.</p>
+        </div>
+      </div>
+      <div style="border-top: 1px solid #26324A; padding-top: 32px; display: flex; flex-wrap: wrap; gap: 24px 56px; align-items: center">
+        <div style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; color: #A5B4CF; flex: 1 1 200px">Experience behind the lab</div>
+        <div style="display: flex; gap: 14px; align-items: baseline; flex: 1 1 240px">
+          <span style="font-family: 'Sora', Arial, sans-serif; font-weight: 700; font-size: 44px; line-height: 1; letter-spacing: -0.04em; color: #8AB4FF">10+</span>
+          <span style="color: #C9D6EE">years in software engineering</span>
+        </div>
+        <div style="display: flex; gap: 14px; align-items: baseline; flex: 1 1 240px">
+          <span style="font-family: 'Sora', Arial, sans-serif; font-weight: 700; font-size: 44px; line-height: 1; letter-spacing: -0.04em; color: #8AB4FF">7</span>
+          <span style="color: #C9D6EE">years in robotics</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAB -->
+  <section id="lab" style="background: #0A1020; color: #FFFFFF; border-top: 1px solid #1A2336">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 80px 24px; display: flex; flex-direction: column; gap: 40px">
+      <div style="display: flex; flex-direction: column; gap: 12px">
+        <div style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; color: #22D3EE">More from the lab</div>
+        <h2 style="margin: 0; font-family: 'Sora', Arial, sans-serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -0.03em; text-wrap: balance">Live and in development.</h2>
+        <p style="margin: 0; max-width: 60ch; color: #C9D6EE">The lab is not tied to one domain. A new project starts wherever there is a problem worth solving.</p>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr)); gap: 24px">
+        <div class="tl-lift" style="border: 1px solid #26324A; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 14px; background: #111A2E">
+          <div style="display: inline-flex; gap: 10px; align-items: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #9BE7F5"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #22D3EE; "></span>Live</div>
+          <h3 style="margin: 0; font-family: 'Sora', Arial, sans-serif; font-weight: 600; font-size: 24px; letter-spacing: -0.02em">Anima Breath</h3>
+          <p style="margin: 0; font-size: 16px; color: #C9D6EE">The website of a breath therapy studio.</p>
+          <a href="https://anima-breath.com" style="align-self: flex-start; display: inline-flex; align-items: center; min-height: 44px; font-weight: 600; color: #8AB4FF">anima-breath.com &rarr;</a>
+        </div>
+        <div class="tl-lift" style="border: 1px solid #26324A; border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 14px; background: #111A2E">
+          <div style="display: inline-flex; gap: 10px; align-items: center; font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: #9BE7F5"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #22D3EE; animation: tl-pulse 2.8s ease-in-out infinite"></span>In development</div>
+          <h3 style="margin: 0; font-family: 'Sora', Arial, sans-serif; font-weight: 600; font-size: 24px; letter-spacing: -0.02em">Covra</h3>
+          <p style="margin: 0; font-size: 16px; color: #C9D6EE">A budget management app.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METHOD -->
+  <section id="method">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 88px 24px 80px; display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end">
+      <div style="flex: 1 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 12px">
+        <div style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; color: #2563EB">Method</div>
+        <h2 style="margin: 0; font-family: 'Sora', Arial, sans-serif; font-weight: 700; font-size: clamp(30px, 3.6vw, 46px); line-height: 1.1; letter-spacing: -0.03em; text-wrap: balance">Planned before it is built. Tested before it ships.</h2>
+      </div>
+      <p style="flex: 1 1 360px; min-width: 0; margin: 0; max-width: 52ch; font-size: 19px; color: #36415A">Every product is modelled first, built in small steps and reviewed before release. The same process applies to all of them.</p>
+    </div>
+  </section>
+
+  <!-- LEGAL -->
+  <section id="legal" style="background: #FFFFFF; border-top: 1px solid #CBD3E1">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 80px 24px; display: flex; flex-wrap: wrap; gap: 40px 64px; align-items: flex-start">
+      <div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 12px; align-items: flex-start">
+        <div style="font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; color: #2563EB">Legal</div>
+        <h2 style="margin: 0; font-family: 'Sora', Arial, sans-serif; font-weight: 700; font-size: clamp(28px, 3.2vw, 40px); line-height: 1.1; letter-spacing: -0.03em; text-wrap: balance">Terms and privacy for every app.</h2>
+        <p style="margin: 0; max-width: 44ch; color: #36415A">Each Tibi Lab app has its own documents. They are kept here, in one place, and updated together with the app.</p>
+      </div>
+      <div style="flex: 2 1 420px; min-width: 0; display: flex; flex-direction: column">
+        <div style="display: flex; flex-wrap: wrap; gap: 4px 24px; align-items: center; justify-content: space-between; padding: 14px 0; border-top: 2px solid #0A1020">
+          <div style="display: flex; gap: 12px; align-items: center"><img src="home-hive-icon.png" alt="" style="flex: none; width: 36px; height: 36px; border-radius: 9px; object-fit: cover"><h3 style="margin: 0; font-family: 'Sora', Arial, sans-serif; font-weight: 600; font-size: 20px; letter-spacing: -0.01em">Home Hive</h3></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 0 24px; font-weight: 600; color: #2563EB">
+            <a href="https://homehive-243e6.web.app/privacy.html" style="display: inline-flex; align-items: center; min-height: 44px">Privacy policy</a>
+            <a href="https://homehive-243e6.web.app/terms.html" style="display: inline-flex; align-items: center; min-height: 44px">Terms of use</a>
+          </div>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 4px 24px; align-items: center; justify-content: space-between; padding: 14px 0; border-top: 1px solid #CBD3E1; border-bottom: 1px solid #CBD3E1">
+          <div style="display: flex; gap: 12px; align-items: center"><img src="story-taler-icon.png" alt="" style="flex: none; width: 36px; height: 36px; border-radius: 9px; object-fit: cover"><h3 style="margin: 0; font-family: 'Sora', Arial, sans-serif; font-weight: 600; font-size: 20px; letter-spacing: -0.01em">Story Taler</h3></div>
+          <div style="display: flex; flex-wrap: wrap; gap: 0 24px; font-weight: 600; color: #2563EB">
+            <a href="https://story-taler.web.app/legal/privacy.html" style="display: inline-flex; align-items: center; min-height: 44px">Privacy policy</a>
+            <a href="https://story-taler.web.app/legal/terms.html" style="display: inline-flex; align-items: center; min-height: 44px">Terms of use</a>
+          </div>
+        </div>
+        <p style="margin: 16px 0 0; font-size: 15px; color: #36415A">Documents for new apps are added here when they reach the stores.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" style="background: #14275C; color: #FFFFFF">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 80px 24px; display: flex; flex-wrap: wrap; gap: 32px 64px; align-items: center; justify-content: space-between">
+      <div style="flex: 999 1 420px; min-width: 0; display: flex; flex-direction: column; gap: 14px">
+        <h2 style="margin: 0; font-family: 'Sora', Arial, sans-serif; font-weight: 700; font-size: clamp(34px, 4.4vw, 56px); line-height: 1.05; letter-spacing: -0.035em; text-wrap: balance">Questions, feedback or an idea?</h2>
+        <p style="margin: 0; max-width: 52ch; font-size: 19px; color: #D6E4FF">For help with an app, a question about your data, or an idea worth talking about, write to the lab.</p>
+      </div>
+      <div style="flex: 1 1 280px; min-width: 0; display: flex; flex-direction: column; gap: 14px; align-items: flex-start">
+        <a href="mailto:tihamerbiliboc@tibi-lab.com" style="display: inline-flex; align-items: center; min-height: 56px; padding: 8px 24px; box-sizing: border-box; border-radius: 8px; font-weight: 600; background: #FFFFFF; color: #0A1020; max-width: 100%; overflow-wrap: anywhere">tihamerbiliboc@tibi-lab.com</a>
+        <span style="font-family: 'IBM Plex Mono', ui-monospace, monospace; font-size: 13px; color: #D6E4FF">Tibi Lab · Denmark</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="background: #060B16; color: #A5B4CF">
+    <div style="max-width: 1120px; margin: 0 auto; padding: 22px 24px; display: flex; flex-wrap: wrap; gap: 8px 24px; justify-content: space-between; align-items: center; font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace; font-size: 13px">
+      <span>© 2026 Tibi Lab</span>
+      <a href="#legal" style="display: inline-flex; align-items: center; min-height: 44px; color: #FFFFFF">Privacy and terms</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
