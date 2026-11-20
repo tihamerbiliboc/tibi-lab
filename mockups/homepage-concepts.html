@@ -218,13 +218,29 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);font-size:15px
 .m5-hero h1{margin:18px 0 0;font-weight:500;font-size:clamp(42px,6.2cqi,84px);line-height:1;letter-spacing:-.04em;text-wrap:balance}
 .m5-hero h1 span{background:linear-gradient(180deg,var(--brass-l),var(--brass));-webkit-background-clip:text;background-clip:text;color:transparent}
 .m5-hero p{margin:20px 0 0;font-size:17px;max-width:44ch;line-height:1.6;color:var(--soft)}
-.m5-draw{width:100%;max-width:440px;height:auto;justify-self:end;overflow:visible}
-.m5-draw .dim{stroke:var(--line-2);stroke-width:1;fill:none}
-.m5-draw .cl{stroke:var(--line-2);stroke-width:1;stroke-dasharray:4 5;fill:none}
-.m5-draw text{font-family:var(--f-mono);font-size:10.5px;fill:var(--soft);letter-spacing:.08em}
-.m5-draw .mkline{stroke:var(--brass);fill:none;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:0;animation:m5draw 1.8s cubic-bezier(.6,0,.2,1) both}
-.m5-draw .mkline.s2{animation-delay:.5s}
-@keyframes m5draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.m5-stage{position:relative;display:grid;gap:14px;justify-self:end;width:100%;max-width:420px}
+.m5-card{border:1px solid var(--line-2);border-radius:20px;padding:18px;background:linear-gradient(180deg,rgba(25,40,64,.85),rgba(14,26,46,.85));backdrop-filter:blur(12px);box-shadow:0 24px 60px -24px rgba(0,0,0,.6);animation:m5in .9s cubic-bezier(.2,.7,.2,1) both}
+.m5-card.c2{margin-left:12%;animation-delay:.15s}
+.m5-card.c3{margin-right:14%;animation-delay:.3s;padding:14px 18px}
+.m5-row{display:flex;gap:14px;align-items:center}
+.m5-app{width:44px;height:44px;border-radius:12px;border:1px solid var(--line-2);background:rgba(10,19,34,.7);display:grid;place-items:center;flex:none}
+.m5-app .ic{width:28px;height:28px}
+.m5-card small{display:block;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:4px}
+.m5-card b{font-weight:500;font-size:15px;line-height:1.35;letter-spacing:-.01em}
+.m5-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.m5-chips span{font-size:12px;padding:4px 10px;border-radius:999px;border:1px solid var(--line-2);color:var(--soft)}
+.m5-chips span.on{border-color:rgba(207,176,121,.5);color:var(--brass-l)}
+.m5-bar{height:4px;border-radius:4px;background:var(--line);margin-top:14px;overflow:hidden}
+.m5-bar i{display:block;height:100%;width:62%;border-radius:4px;background:linear-gradient(90deg,var(--brass),var(--brass-l))}
+.m5-meta{display:flex;justify-content:space-between;margin-top:8px;font-family:var(--f-mono);font-size:11px;color:var(--soft)}
+.m5-quote{font-size:14px;line-height:1.5;color:var(--text)}
+.m5-quote cite{display:block;margin-top:6px;font-style:normal;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+@keyframes m5in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.m5-values{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-block:1px solid var(--line);margin-bottom:5cqi}
+.m5-values div{padding:22px 24px 22px 0;display:grid;gap:6px}
+.m5-values div+div{padding-left:24px;border-left:1px solid var(--line)}
+.m5-values b{font-weight:500;font-size:16px;letter-spacing:-.01em}
+.m5-values span{font-size:14px;line-height:1.55;color:var(--soft)}
 .m5-label{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-bottom:14px;border-bottom:1px solid var(--line);font-family:var(--f-mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);font-variant-numeric:tabular-nums}
 .m5-specs{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;padding-block:24px 6cqi}
 .m5-spec{position:relative;display:grid;gap:18px;color:inherit;text-decoration:none;align-content:start;padding:24px;border:1px solid var(--line);border-radius:18px;
@@ -253,11 +269,12 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);font-size:15px
 @container mock (max-width:760px){
   .m5-in{padding:0 18px}.m5-links a{padding:6px 10px}
   .m5-hero{grid-template-columns:1fr;padding-block:36px 32px;gap:28px}
-  .m5-draw{justify-self:center;max-width:300px}
+  .m5-stage{justify-self:stretch;max-width:none}.m5-card.c2{margin-left:8%}.m5-card.c3{margin-right:8%}
+  .m5-values{grid-template-columns:1fr}.m5-values div,.m5-values div+div{padding:16px 0;border-left:0}.m5-values div+div{border-top:1px solid var(--line)}
   .m5-specs{grid-template-columns:1fr;gap:14px}
   .m5-title{grid-template-columns:1fr 1fr}.m5-title div:nth-child(3){border-left:0}.m5-title div:nth-child(n+3){border-top:1px solid var(--line)}
 }
-@media (prefers-reduced-motion: reduce){.m5-draw .mkline{animation:none}}
+@media (prefers-reduced-motion: reduce){.m5-card{animation:none}}
 @media (prefers-reduced-motion: reduce){.m4-strip div{animation:none}*{transition:none!important}}
 </style>
 
@@ -375,30 +392,33 @@ body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);font-size:15px
         </div>
         <div class="m5-hero">
           <div>
-            <span class="m5-eyebrow">Sheet 01 · Applications</span>
-            <h1>Small ideas, drawn carefully, built into <span>real apps</span>.</h1>
-            <p>Tibi Lab is an independent app maker. Every app starts as a drawing and gets refined until it does its one job properly.</p>
+            <span class="m5-eyebrow">Independent app maker</span>
+            <h1>Software that fits into <span>everyday life</span>.</h1>
+            <p>Tibi Lab builds focused apps for real people. Each one takes an everyday chore or goal and makes it simpler, and keeps improving from how people actually use it.</p>
           </div>
-          <svg class="m5-draw" viewBox="0 0 360 300" role="img" aria-label="Technical drawing of the Tibi Lab mark">
-            <line class="cl" x1="180" y1="34" x2="180" y2="246"/><line class="cl" x1="76" y1="140" x2="284" y2="140"/>
-            <path class="dim" d="M90 22 V12 M270 22 V12 M90 17 H270"/>
-            <text x="180" y="9" text-anchor="middle">32 PT</text>
-            <path class="dim" d="M278 50 H290 M278 230 H290 M285 50 V230"/>
-            <text x="300" y="143" text-anchor="start">32</text>
-            <path class="dim" d="M104 64 L58 36 H22"/>
-            <text x="22" y="30">R 8</text>
-            <path class="dim" d="M223 180 L262 262 H330"/>
-            <text x="264" y="278">T + L · ONE STROKE</text>
-            <rect class="mkline" pathLength="1" x="90" y="50" width="180" height="180" rx="46" stroke-width="2.5"/>
-            <path class="mkline s2" pathLength="1" d="M136.5 102.7 H223.3 M179.9 102.7 V180.2 H223.3" stroke-width="14"/>
-          </svg>
+          <div class="m5-stage" aria-hidden="true">
+            <div class="m5-card">
+              <div class="m5-row"><span class="m5-app"><svg class="ic" viewBox="0 0 64 64"><use href="#ic-hive"/></svg></span><div><small>Home Hive · Reminder</small><b>Your dishwasher's warranty ends in 14 days</b></div></div>
+              <div class="m5-chips"><span class="on">Receipt saved</span><span>Kitchen</span><span>Bought 2024</span></div>
+            </div>
+            <div class="m5-card c2">
+              <div class="m5-row"><span class="m5-app"><svg class="ic" viewBox="0 0 64 64"><use href="#ic-door"/></svg></span><div><small>Story Taler · Chapter 3</small><b>Ved havnen</b></div></div>
+              <div class="m5-bar"><i></i></div>
+              <div class="m5-meta"><span>Reading · listening</span><span>8 min left</span></div>
+            </div>
+          </div>
         </div>
-        <div class="m5-label"><span>Index of apps</span><span><span data-count></span> drawings</span></div>
+        <div class="m5-values">
+          <div><b>One job, done well</b><span>Each app solves one everyday problem instead of trying to do everything.</span></div>
+          <div><b>Shaped by its users</b><span>Feedback from people using the apps decides what gets built next.</span></div>
+          <div><b>Calm by design</b><span>Clear screens, useful reminders and nothing that competes for attention.</span></div>
+        </div>
+        <div class="m5-label"><span>Apps</span><span><span data-count></span> apps</span></div>
         <div class="m5-specs" data-list="m5"></div>
         <div class="m5-title">
           <div><b>About</b><a href="#">Tibi Lab · independent app maker</a></div>
           <div><b>Apps</b><span data-count></span></div>
-          <div><b>Revision</b><span>2026</span></div>
+          <div><b>Updated</b><span>2026</span></div>
           <div><b>Legal</b><a href="#">Documents ↗</a></div>
         </div>
       </div>
@@ -413,7 +433,7 @@ const CONCEPTS=[
   {id:'nordic-index',name:'Nordic Index',why:'Calm Scandinavian catalogue in stone, graphite and bronze. Serif app names, one row per app with a small live detail.'},
   {id:'felt-brass',name:'Felt & Brass',why:'Tactile luxury. Deep green felt, ivory letterpress cards held by brass pins, and an engraved brass nameplate as the logo.'},
   {id:'loud-type',name:'Loud Type',why:'Bold typographic in oxblood and ivory. The app names are the design, stacked like a wine list that gets longer over time.'},
-  {id:'blueprint',name:'Blueprint',why:'Modern technical sheet. Deep navy, a grid that fades out, glass panels and one brass accent; the hero is a dimensioned drawing of the Tibi Lab mark.'}
+  {id:'blueprint',name:'Blueprint',why:'Modern and calm: deep navy, a faint grid, glass panels and one brass accent. The hero shows the apps in use, the way a user sees them.'}
 ];
 const APPS=[
   {name:'Home Hive',tag:'Household inventory, receipts and warranty reminders.',icon:'hive',c:'#A88850',detail:'Next warranty ends in 3 months · Dishwasher',notes:['Every receipt in one place','Reminds you before a warranty ends']},
@@ -436,7 +456,7 @@ const R={
   m3:l=>`<div class="m3-studio"><p>Tibi Lab is an independent app maker making small apps for home, language and everyday life.</p><a href="#">About Tibi Lab →</a></div>`+
      l.map(a=>`<a class="m3-card" href="#" style="--c:${a.c}">${icon(a)}<h3>${esc(a.name)}${ex(a)}</h3><p>${esc(a.tag)}</p><b>Open →</b></a>`).join(''),
   m4:l=>l.map(a=>`<a class="m4-app" href="#"><span class="m4-name">${icon(a)}<span>${esc(a.name)}</span></span><span class="m4-meta"><span>${esc(a.tag)}${ex(a)}</span><b>Open →</b></span></a>`).join(''),
-  m5:l=>l.map((a,i)=>`<a class="m5-spec" href="#"><div class="m5-top"><div class="m5-fig">${icon(a)}</div><small>Fig. ${String.fromCharCode(65+i)}${ex(a)}</small></div><div><h2>${esc(a.name)}</h2><p>${esc(a.tag)}</p></div>${a.notes?`<ul class="m5-notes"><li>${esc(a.notes[0])}</li><li>${esc(a.notes[1])}</li></ul>`:''}<span class="m5-go">Open ${esc(a.name)} <i>→</i></span></a>`).join('')
+  m5:l=>l.map((a,i)=>`<a class="m5-spec" href="#"><div class="m5-top"><div class="m5-fig">${icon(a)}</div><small>${String(i+1).padStart(2,'0')}${ex(a)}</small></div><div><h2>${esc(a.name)}</h2><p>${esc(a.tag)}</p></div>${a.notes?`<ul class="m5-notes"><li>${esc(a.notes[0])}</li><li>${esc(a.notes[1])}</li></ul>`:''}<span class="m5-go">Open ${esc(a.name)} <i>→</i></span></a>`).join('')
 };
 let count=5;
 function render(){
